@@ -20,4 +20,19 @@ public interface BeerService {
      * @return saved beer info.
      */
     BeerDto saveNewBeer(BeerDto beerDto);
+
+    /**
+     * Update a beer info.
+     *
+     * @param beerId  beer id.
+     * @param beerDto beer info to update.
+     * @return updated beer info.
+     */
+    void updateBeer(UUID beerId, BeerDto beerDto);
+
+    /**
+     * Delete beer info.
+     * @param beerId beer id.
+     */
+    void deleteBeer(UUID beerId);
 }

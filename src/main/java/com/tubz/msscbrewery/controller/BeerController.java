@@ -46,4 +46,27 @@ public class BeerController {
         headers.add("Location", "/api/v1/beer/" + savedBeerDto.getId().toString());
         return new ResponseEntity(headers, HttpStatus.CREATED);
     }
+
+    /**
+     * API to update beer details.
+     *
+     * @param beerDto beer info to update.
+     * @return location to the updated beer.
+     */
+    @PutMapping("/{beerId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void handlePut(@PathVariable final UUID beerId, @RequestBody final BeerDto beerDto) {
+        beerService.updateBeer(beerId, beerDto);
+    }
+
+    /**
+     * API to delete a beer info.
+     *
+     * @param beerId beer id to delete.
+     */
+    @DeleteMapping("/{beerId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void handleDelete(@PathVariable UUID beerId) {
+        beerService.deleteBeer(beerId);
+    }
 }
