@@ -12,4 +12,12 @@ public interface BeerService {
      * @return beer with matching id.
      */
     BeerDto getBeerById(UUID beerId);
+
+    /**
+     * Save new beer.
+     *
+     * @param beerDto beer info.
+     * @return saved beer info.
+     */
+    BeerDto saveNewBeer(BeerDto beerDto);
 }
