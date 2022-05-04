@@ -14,19 +14,23 @@ import java.util.UUID;
 /**
  * Beer controller.
  */
-
 @RequestMapping("/api/v1/beer")
 @RestController
 public class BeerController {
 
     private final BeerService beerService;
 
-    public BeerController(BeerService beerService) {
+    /**
+     * Constructor.
+     *
+     * @param beerService beer service.
+     */
+    public BeerController(final BeerService beerService) {
         this.beerService = beerService;
     }
 
     @GetMapping("/{beerId}")
-    public ResponseEntity<BeerDto> getBeer(@PathVariable UUID beerId) {
+    public ResponseEntity<BeerDto> getBeer(@PathVariable final UUID beerId) {
         return new ResponseEntity<>(beerService.getBeerById(beerId), HttpStatus.OK);
     }
 }

@@ -17,7 +17,7 @@ public class BeerServiceImpl implements BeerService {
      * @return beer with matching id.
      */
     @Override
-    public BeerDto getBeerById(UUID beerId) {
+    public BeerDto getBeerById(final UUID beerId) {
         return BeerDto
                 .builder()
                 .id(UUID.randomUUID())
