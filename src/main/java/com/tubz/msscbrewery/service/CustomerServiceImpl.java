@@ -24,4 +24,39 @@ public class CustomerServiceImpl implements CustomerService {
                 .customerName("John Doe")
                 .build();
     }
+
+    /**
+     * Save new customer details.
+     *
+     * @param customerDto new customer details to save.
+     * @return saved customer details.
+     */
+    @Override
+    public CustomerDto saveNewCustomer(final CustomerDto customerDto) {
+        return customerDto
+                .builder()
+                .id(UUID.randomUUID())
+                .build();
+    }
+
+    /**
+     * Update customer details.
+     *
+     * @param customerId  customer id to update.
+     * @param customerDto customer details to update.
+     */
+    @Override
+    public void updateCustomer(final UUID customerId, final CustomerDto customerDto) {
+        // TODO: Real impl will add later.
+    }
+
+    /**
+     * Delete customer details.
+     *
+     * @param customerId  customer id to update.
+     */
+    @Override
+    public void deleteCustomer(final UUID customerId) {
+        // TODO: Real impl will add later.
+    }
 }

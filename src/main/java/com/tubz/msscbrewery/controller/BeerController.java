@@ -51,7 +51,6 @@ public class BeerController {
      * API to update beer details.
      *
      * @param beerDto beer info to update.
-     * @return location to the updated beer.
      */
     @PutMapping("/{beerId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
